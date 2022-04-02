@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tính điểm đại học</title>
+    <style>
+      tr {
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tính điểm Đại học</h1>
+    <table>
+      <tr>
+        <td>Môn toán</td>
+        <td><input type="number" id="math" size="20" /></td>
+      </tr>
+      <tr>
+        <td>Môn Văn</td>
+        <td><input type="number" id="litera" size="20" /></td>
+      </tr>
+      <tr>
+        <td>Môn Anh</td>
+        <td><input type="number" id="eng" size="20" /></td>
+      </tr>
+      <tr>
+        <td>Khu vực</td>
+        <td>
+          <select name="" id="ter">
+            <option value="KV1">KV1</option>
+            <option value="KV2">KV2</option>
+            <option value="KV2(NT)">KV2(NT)</option>
+            <option value="KV3">KV3</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="count()">Tính điểm</button>
+        </td>
+      </tr>
+    </table>
+    <div id="result"></div>
+    <script>
+      function count() {
+        let math = parseInt(document.getElementById("math").value);
+        let litera = parseInt(document.getElementById("litera").value);
+        let eng = parseInt(document.getElementById("eng").value);
+        let bonus = document.getElementById("ter").value;
+        let bonusAdd = bonusPick(bonus);
+        let sum = math + litera + eng + bonusAdd;
+        document.getElementById("result").innerText = "Tổng điểm là  " + sum;
+      }
+      function bonusPick(bonus) {
+        let bonusAdd = 0;
+        switch (bonus) {
+          case "KV1":
+            bonusAdd = 0.75;
+            break;
+          case "KV2":
+            bonusAdd = 0.25;
+            break;
+          case "KV2(NT)":
+            bonusAdd = 0.5;
+            break;
+          case "KV3":
+            bonusAdd = 0;
+            break;
+        }
+        return bonusAdd;
+      }
+    </script>
+  </body>
+</html>
