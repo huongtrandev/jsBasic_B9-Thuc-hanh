@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính BMI</title>
+  </head>
+  <body>
+    <script>
+      let p = parseInt(prompt("Enter your weight: ")).value;
+      let h = parseInt(prompt("Enter your height: ")).value;
+      let bmi = p / (h * h);
+      switch (bmi) {
+        case bmi < 16:
+          alert("Gầy độ III");
+          break;
+        case 16 <= bmi && bmi < 17:
+          alert("Gầy độ II");
+          break;
+        case 17 <= bmi && bmi < 18.5:
+          alert("Gầy độ I");
+          break;
+        case 18.5 <= bmi && bmi < 25:
+          alert("Bình thường");
+          break;
+        case 25 <= bmi && bmi < 30:
+          alert("Thừa cân");
+          break;
+        case 30 <= bmi && bmi < 35:
+          alert("Besi phì độ 1");
+          break;
+        case 35 <= bmi && bmi < 40:
+          alert("Béo phì độ II");
+          break;
+        case bmi > 40:
+          alert("Béo phì độ III");
+          break;
+      }
+    </script>
+  </body>
+</html>

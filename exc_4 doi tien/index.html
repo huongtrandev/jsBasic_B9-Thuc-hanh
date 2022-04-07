@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Money changer</title>
-</head>
-<body>
-  <table>
-    <tr style="text-align:center; height: 30px;">
-      <td>Amount</td>
-      <td>From Currency</td>
-      <td>To Currency</td>      
-    </tr>
-    <tr>
-      <td><input type="number" id="inputNum"></td>
-      <td style="width:150px; text-align: center;">
-        <select name="" class="fromC">
-          <option value="USD">USD</option>
-          <option value="VND">VND</option>
-        </select>
-      </td>
-      <td style="width:150px; text-align: center;">
-        <select name="" class="toC">
-          <option value="USD">USD</option>
-          <option value="VND">VND</option>
-        </select>
-      </td>
-      <td>
-        <button id="btn" onclick="convert()">
-          Convert!
-        </button>
-      </td>
-    </tr>
-  </table>
-  <script>
-    let inputNum = parseInt(document.getElementById('inputNum'));
-    let formC = parseInt(document.getElementsByClassName('fromC'));
-    let toC = parseInt(document.getElementById('toC'));
-    
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money changer</title>
+  </head>
+  <body>
+    <table>
+      <tr style="text-align: center; height: 30px">
+        <td>Amount</td>
+        <td>From Currency</td>
+        <td>To Currency</td>
+      </tr>
+      <tr>
+        <td><input type="number" id="inputNum" /></td>
+        <td style="width: 150px; text-align: center">
+          <select name="" class="fromC">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+          </select>
+        </td>
+        <td style="width: 150px; text-align: center">
+          <select name="" class="toC">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+          </select>
+        </td>
+        <td>
+          <button id="btn" onclick="convert();">Convert!</button>
+        </td>
+      </tr>
+    </table>
+    <div class="resultFinal"></div>
+    <script>
+      const ratio = 23000;
+      let result;
+      let inputNum = parseInt(document.getElementById("inputNum").value);
+      function convert() {
+        let formC = document.getElementsByClassName("fromC");
+        let toC = document.getElementById("toC");
+        if (formC == "USD" && toC == "VND") {
+          result = inputNum * ratio;
+        } else if (formC == "VND" && toC == "USD") {
+          result = inputNum / ratio;
+        } else if (
+          (formC == "VND" && toC == "VND") ||
+          (formC == "USD" && toC == "USD")
+        ) {
+          result = inputNum;
+        }
+        document.getElementsByClassName("resultFinal").innerText =
+          "kết quả là: " + result;
+      }
+    </script>
+  </body>
 </html>
