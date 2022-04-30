@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exc_6 Lịch Can Chi</title>
+  </head>
+  <body>
+    <input type="number" id="year" onchange="canChi()" />
+    <div id="result"></div>
+    <script>
+      function canChi() {
+        let can, chi;
+        let yearIn = parseInt(document.getElementById("year").value);
+        can = yearIn % 10;
+        chi = yearIn % 12;
+        switch (can) {
+          case 0:
+            alert("Phần Can trong Can-Chi là: Canh");
+            break;
+          case 1:
+            alert("Phần Can trong Can-Chi là: Tân");
+            break;
+          case 2:
+            aleart("Phần Can trong Can-Chi là: Nhâm");
+            break;
+          case 3:
+            alert("Phần Can trong Can-Chi là: Quý");
+            break;
+          case 4:
+            alert("Phần Can trong Can-Chi là: Giáp");
+            break;
+          case 5:
+            alert("Phần Can trong Can-Chi là: Ất");
+            break;
+          case 6:
+            aleart("Phần Can trong Can-Chi là: Bính");
+            break;
+          case 7:
+            alert("Phần Can trong Can-Chi là: Đinh");
+            break;
+          case 8:
+            aleart("Phần Can trong Can-Chi là: Mậu");
+            break;
+          case 9:
+            alert("Phần Can trong Can-Chi là: Kỷ");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
