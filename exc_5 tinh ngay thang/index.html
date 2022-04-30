@@ -7,31 +7,30 @@
     <title>Exc_5 Tính ngày tháng</title>
   </head>
   <body>
-    <input type="number" id="input" onchange="toDay()" />
+    <input type="number" id="input" oninput="toDay()" />
     <div id="result"></div>
     <script>
-      var month = parseInt(document.getElementById("input")).value;
       function toDay() {
+        var month = parseInt(document.getElementById("input").value);
         switch (month) {
-          case month == 1:
-          case month == 3:
-          case month == 5:
-          case month == 7:
-          case month == 8:
-          case month == 10:
-          case month == 12:
-            alert("Tháng " + month + " có 31 ngày");
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
             document.getElementById("result").innerText =
               "Tháng " + month + " có 31 ngày";
             break;
-          case month == 2:
+          case 2:
             document.getElementById("result").innerText =
               "Tháng " + month + " có 28 hoặc 29 ngày";
             break;
-          case month == 4:
-          case month == 6:
-          case month == 9:
-          case month == 11:
+          case 4:
+          case 6:
+          case 9:
+          case 11:
             document.getElementById("result").innerText =
               "Tháng " + month + " có 30 ngày";
         }
