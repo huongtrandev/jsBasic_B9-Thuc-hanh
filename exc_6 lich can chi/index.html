@@ -7,46 +7,87 @@
     <title>Exc_6 Lịch Can Chi</title>
   </head>
   <body>
-    <input type="number" id="year" onchange="canChi()" />
+    <input type="number" id="year" oninput="canChi()" />
     <div id="result"></div>
     <script>
       function canChi() {
         let can, chi;
+        let canPlus, chiPlus;
         let yearIn = parseInt(document.getElementById("year").value);
         can = yearIn % 10;
         chi = yearIn % 12;
         switch (can) {
           case 0:
-            alert("Phần Can trong Can-Chi là: Canh");
+            canPlus = "Canh";
             break;
           case 1:
-            alert("Phần Can trong Can-Chi là: Tân");
+            canPlus = "Tân";
             break;
           case 2:
-            aleart("Phần Can trong Can-Chi là: Nhâm");
+            canPlus = "Nhâm";
             break;
           case 3:
-            alert("Phần Can trong Can-Chi là: Quý");
+            canPlus = "Quý";
             break;
           case 4:
-            alert("Phần Can trong Can-Chi là: Giáp");
+            canPlus = "Giáp";
             break;
           case 5:
-            alert("Phần Can trong Can-Chi là: Ất");
+            canPlus = "Ất";
             break;
           case 6:
-            aleart("Phần Can trong Can-Chi là: Bính");
+            canPlus = "Bính";
             break;
           case 7:
-            alert("Phần Can trong Can-Chi là: Đinh");
+            canPlus = "Đinh";
             break;
           case 8:
-            aleart("Phần Can trong Can-Chi là: Mậu");
+            canPlus = "Mậu";
             break;
           case 9:
-            alert("Phần Can trong Can-Chi là: Kỷ");
+            canPlus = "kỷ";
             break;
         }
+        switch (chi) {
+          case 0:
+            chiPlus = "Thân";
+            break;
+          case 1:
+            chiPlus = "Dậu";
+            break;
+          case 2:
+            chiPlus = "Tuất";
+            break;
+          case 3:
+            chiPlus = "Hợi";
+            break;
+          case 4:
+            chiPlus = "Tý";
+            break;
+          case 5:
+            chiPlus = "Sửu";
+            break;
+          case 6:
+            chiPlus = "Dần";
+            break;
+          case 7:
+            chiPlus = "Mão";
+            break;
+          case 8:
+            chiPlus = "Thìn";
+            break;
+          case 9:
+            chiPlus = "Tỵ";
+            break;
+          case 10:
+            chiPlus = "Ngọ";
+            break;
+          case 11:
+            chiPlus = "Mùi";
+            break;
+        }
+        document.getElementById("result").innerHTML =
+          "Năm " + yearIn + " là năm " + canPlus + " " + chiPlus;
       }
     </script>
   </body>
