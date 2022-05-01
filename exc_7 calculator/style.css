@@ -1,5 +1,21 @@
-.calcu {
+body {
+  border: 0;
+  padding: 0;
+}
+
+.bounty {
+  padding: 0.5rem;
+}
+.screen {
   width: 300px;
+  height: 80px;
+  font-size: 20px;
+  border: 1px solid black;
+  padding: 0;
+}
+
+.calcu {
+  width: 302px;
   height: 400px;
   background-color: rgb(217, 218, 199);
 }
